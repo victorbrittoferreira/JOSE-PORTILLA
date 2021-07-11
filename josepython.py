@@ -256,14 +256,22 @@ my_list1 = [1,2,3]
 #shuffle function
 
 # from which func , import what
-from random import shuffle
-
-#inplace function
-shuffle(my_list1)
-
-print( my_list1)
+#from random import shuffle
+#
+##inplace function
+#shuffle(my_list1)
+#
+#print( my_list1)
 
 #38. List Comprehensions in Python
 
-x
+my_string = 'hello'
+
+# 1st way
+#print(list(my_string))
+
+#2nd way
+lst = [x for x in 'hello']
+
+print(lst)
 

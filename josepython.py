@@ -265,13 +265,63 @@ my_list1 = [1,2,3]
 
 #38. List Comprehensions in Python
 
-my_string = 'hello'
+#my_string = 'hello'
 
 # 1st way
 #print(list(my_string))
 
 #2nd way
-lst = [x for x in 'hello']
+#lst = [letter for letter in 'hello']
+#
+#print(lst)
 
-print(lst)
+#3rd way
 
+#my_list = []
+#
+#for letter in  my_string:
+#    my_list.append(letter)
+#print(my_list)
+
+#my_list = [num for num in range(1,11)]
+#
+##doing operations
+#my_list = [num**2 for num in range(1,11)]
+#
+##doing operations, with conditional
+#my_list = [num**2 for num in range(1,11) if num % 2 == 0  ]
+
+#print(my_list)
+
+#its able to do more complex operations
+
+#celcius = [ temp for temp in range(0, 40, 5)]
+##fahrenheit = [ (( 9 / 5) * temp + 32) for temp in celcius]
+#
+##same thing, but another way
+#fahrenheit = []
+#
+#for temp in celcius:
+#    fahrenheit.append( (9/5)*temp + 32)
+#
+#print(f'Celsius {celcius}')
+#print(f'Fahrenheit {fahrenheit}')
+
+#result = [ x if x %2 == 0 else 'ODD' for x in range (1,11)]
+#print(result)
+
+#mylist = []
+#
+#for x in [2, 4 ,6]:
+#    for y in [1, 10, 100]:
+#        mylist.append((x * y))
+#        #is possibile include another operations
+#        #mylist.append((x * y)**2)
+
+# the result [2, 20, 200, 4, 40, 400, 6, 60, 600], like a matriz
+
+#mylist = [(x * y)*1/3 for x in [2, 4 ,6] for y in [1, 10, 100]]
+#
+#print(mylist)
+
+# Statements Assessment Test

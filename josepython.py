@@ -388,8 +388,12 @@ my_list1 = [1,2,3]
 #6 Use List Comprehension to create a list of the first letters
 # of every word in the string below:
 
-st = 'Create a list of the first letters of every word in this string'
- 
-print([word[0] for word in st.split()])
-#x = [word[0] for word in st.split()]
-#print(x)
+#st = 'Create a list of the first letters of every word in this string'
+# 
+#print([word[0] for word in st.split()])
+##x = [word[0] for word in st.split()]
+##print(x)
+
+#41 Methods and the Python Documentation
+
+my_lis = 1

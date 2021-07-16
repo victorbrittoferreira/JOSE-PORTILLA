@@ -397,3 +397,5 @@ my_list1 = [1,2,3]
 #41 Methods and the Python Documentation
 
 my_lis = A + B
+
+sec_lis = C

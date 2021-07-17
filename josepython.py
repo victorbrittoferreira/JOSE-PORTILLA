@@ -401,3 +401,5 @@ my_lis = A + B
 sec_lis = C
 
 test1 = b
+
+test2 = c

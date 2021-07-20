@@ -396,14 +396,11 @@ my_list1 = [1,2,3]
 
 #41 Methods and the Python Documentation
 
-my_lis = A + B
+# we use return to send back de result of the function and it allows 
+# to assign the output of the function to a new variable
 
-sec_lis = C
+#  ' = ' sets a default value
+def say_hello(name = 'foreign'):
+    print(f'Hello {name}')
 
-test1 = b
-
-test2 = c
-
-test3 = d
-
-test4 = e
+say_hello()

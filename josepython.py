@@ -405,11 +405,46 @@ my_list1 = [1,2,3]
 #
 #say_hello()
 
-def myfunc ( a, b):
-    # a pontual debbugging
-    print (a + b)
-    return (a + b)
-    
-myfunc(10 , 20)
-#result = myfunc(10 , 20)
+#def myfunc ( a, b):
+#    # a pontual debbugging
+#    print (a + b)
+#    return (a + b)
+#    
+#myfunc(10 , 20)
+##result = myfunc(10 , 20)
+
+# 45 Logic with Python Functions
+
+#def even_check(number):
+#    #print (number % 2 == 0)
+#    return number % 2 == 0
+#
+#even_check (20)
+
+def check_even_list (num_list):
+#    for number in num_list:
+#        if number % 2 == 0:
+#            return True
+#        else:
+#            pass
+#    return False
+#print (check_even_list([1, 2 ,3]))
+
+    #placeholder variables
+    even_numbers = []
+    x = 'x'
+
+    for number in num_list:
+        if number % 2 == 0:
+            #return True
+            even_numbers.append(number)
+        else:
+            pass
+    return even_numbers, x
+
+print (check_even_list([1, 2 ,3]))
+# unzipin the tupple
+print (check_even_list([1, 2 ,3])[1])
+        
+
 

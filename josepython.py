@@ -406,3 +406,5 @@ def say_hello(name = 'foreign'):
 say_hello()
 
 print(say_hello())
+
+rest = 1 

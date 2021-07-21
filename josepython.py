@@ -400,11 +400,16 @@ my_list1 = [1,2,3]
 # to assign the output of the function to a new variable
 
 #  ' = ' sets a default value
-def say_hello(name = 'foreign'):
-    print(f'Hello {name}')
+#def say_hello(name = 'foreign'):
+#    print(f'Hello {name}')
+#
+#say_hello()
 
-say_hello()
+def myfunc ( a, b):
+    # a pontual debbugging
+    print (a + b)
+    return (a + b)
+    
+myfunc(10 , 20)
+#result = myfunc(10 , 20)
 
-print(say_hello())
-
-rest = 1 

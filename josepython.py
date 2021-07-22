@@ -575,11 +575,26 @@
 #MASTER YODA: Given a sentence, return a sentence with 
 #the words reversed  (CHECK)
     
-def master_yoda(text):
-    
-    reversedtext = list(text.split(' '))[::-1]
-    joinedtext = ' '.join(reversedtext)
-    
-    return joinedtext
-       
-print(master_yoda('I am home'))
+#def master_yoda(text):
+#    
+#    reversedtext = list(text.split(' '))[::-1]
+#    joinedtext = ' '.join(reversedtext)
+#    
+#    return joinedtext
+#       
+#print(master_yoda('I am home'))
+
+
+#ALMOST THERE: Given an integer n, return True 
+#if n is within 10 of either 100 or 200 
+
+#def almost_there(n):
+#    
+#    if 90 <= n <= 110 or 190 <= n <= 210:
+#        return True
+#    else:
+#        return False
+#    
+#print(almost_there(189))
+
+#LEVEL 2 PROBLEMS¶

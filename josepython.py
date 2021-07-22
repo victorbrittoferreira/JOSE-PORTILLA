@@ -629,3 +629,30 @@
 #    return ''.join(new_text)
 #
 #print(paper_doll('Hello'))
+
+
+#BLACKJACK: Given three integers between 1 and 11,
+# if their sum is less than or equal to 21,
+# return their sum. 
+# If their sum exceeds 21 and there's an eleven,
+# reduce the total sum by 10.
+# Finally, if the sum (even after adjustment) exceeds 21, 
+# return 'BUST'
+
+#def blackjack(a,b,c):
+#    bjsum = a + b + c
+#
+#    if bjsum > 21 and a == 11 or b == 11 or c == 11:
+#        bjsum -= 10
+#        #print(bjsum)
+#        if bjsum < 21:
+#            return bjsum
+#        else:
+#            return 'BUST'
+#    elif bjsum <= 21:
+#            return bjsum
+#    
+#print(blackjack(5,6,7))
+
+        
+    

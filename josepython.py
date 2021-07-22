@@ -421,7 +421,7 @@ my_list1 = [1,2,3]
 #
 #even_check (20)
 
-def check_even_list (num_list):
+#def check_even_list (num_list):
 #    for number in num_list:
 #        if number % 2 == 0:
 #            return True
@@ -431,20 +431,29 @@ def check_even_list (num_list):
 #print (check_even_list([1, 2 ,3]))
 
     #placeholder variables
-    even_numbers = []
-    x = 'x'
+#    even_numbers = []
+#    x = 'x'
+#
+#    for number in num_list:
+#        if number % 2 == 0:
+#            #return True
+#            even_numbers.append(number)
+#        else:
+#            pass
+#    return even_numbers, x
+#
+#print (check_even_list([1, 2 ,3]))
+## unpacking the tupple
+#print (check_even_list([1, 2 ,3])[1])
 
-    for number in num_list:
-        if number % 2 == 0:
-            #return True
-            even_numbers.append(number)
-        else:
-            pass
-    return even_numbers, x
+#46 Tuple unpacking with python functions
 
-print (check_even_list([1, 2 ,3]))
-# unzipin the tupple
-print (check_even_list([1, 2 ,3])[1])
+#stock_prices = [('APPL',200), ('GOOG',400), ('MSFT',100)]
+#
+#for mark,price in stock_prices:
+#    #print(mark)
+#    print(price+ (0.1*price))
+
         
 
 

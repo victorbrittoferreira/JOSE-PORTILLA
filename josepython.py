@@ -231,7 +231,7 @@
 
 ## ZIP FUNCTION
 
-my_list1 = [1,2,3]
+#my_list1 = [1,2,3]
 #my_list2 = ['a','b','c']
 #my_list3 = ['@','!','$','%']
 
@@ -454,27 +454,73 @@ my_list1 = [1,2,3]
 #    #print(mark)
 #    print(price+ (0.1*price))
 
-work_hours = [('Abby',100), ('Billy',4000), ('Cassie', 800)]
+#work_hours = [('Abby',100), ('Billy',4000), ('Cassie', 800)]
+#
+#def employee_check (work_hours):
+#    
+#    current_max = 0
+#    employee_of_month = ''
+#    
+#    for employee, hours in work_hours:
+#        if hours > current_max:
+#            current_max = hours
+#            employee_of_month = employee
+#        else:
+#            pass
+#    return employee_of_month, current_max
+#
+#print(employee_check(work_hours))
+##way to find out quantity of items
+##result = (employee_check(work_hours))
+#employee, hours = (employee_check(work_hours))
+#
+#print(employee)
 
-def employee_check (work_hours):
-    
-    current_max = 0
-    employee_of_month = ''
-    
-    for employee, hours in work_hours:
-        if hours > current_max:
-            current_max = hours
-            employee_of_month = employee
+# 47 Intereactions  between Python functions
+
+#def myfunc(word):
+#    outstring = []
+#    
+#    for index, letter in enumerate (word.lower()):
+#        if index % 2 != 0:
+#            outstring.append(letter.upper())
+#        else:
+#            outstring.append(letter)
+#    
+#    return ''.join(outstring)
+
+#print(myfunc('Xasdasd'))
+
+## an advanced way
+#def myfunc(s): return ''.join(char.upper() if i%2 else char.lower() for i, char in enumerate(s))
+
+# portilla's way
+#def myfunc(word):
+#    out = []
+#    for index in range(len(word)):
+#        #print(i)
+#        if index %2==0:
+#            out.append(word[index].lower())
+              
+# 50 Functions practice Exercises
+
+#LESSER OF TWO EVENS: Write a function that returns 
+# the lesser of two given numbers if both numbers are 
+# even, but returns the greater if one or both numbers are odd
+
+#lesser_of_two_evens(2,4) --> 2
+#lesser_of_two_evens(2,5) --> 5
+
+def lesser_of_two_evens(a,b):
+    if a % 2 == 0 and b % 2 == 0:
+        if a < b:
+            return a
         else:
             pass
-    return employee_of_month, current_max
-
-print(employee_check(work_hours))
-
-result = (employee_check(work_hours))
-employee, hours = (employee_check(work_hours))
-
-print(employee)
-
-
-
+    else:
+        if a > b:
+            return a
+        else:
+            return b
+        
+print(lesser_of_two_evens(2,5))

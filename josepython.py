@@ -614,7 +614,18 @@
 #            
 #print(has_33([3,3,1,3]))
 
-for n in nums:
-    str(n)
 
+#PAPER DOLL: Given a string, return a string where
+# for every character in the original there are 
+# three characters
 
+#def paper_doll(text):      
+#    #x = [(letter * 3) for letter in text]
+#    new_text = []
+#    
+#    for letter in text:
+#        new_text.append(letter*3)
+#
+#    return ''.join(new_text)
+#
+#print(paper_doll('Hello'))

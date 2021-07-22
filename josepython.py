@@ -536,12 +536,26 @@
 #x = 'Levelheaded Llama'
 #print(x.split(' '))
 
-def animal_crackers(text):
+#def animal_crackers(text):
+#
+#    words = list(text.split(' '))
+#    if words[0][0] == words[1][0]:
+#        return True        
+#    else:
+#        return False
+#    
+#print(animal_crackers('Levelheaded Llama'))
 
-    words = list(text.split(' '))
-    if words[0][0] == words[1][0]:
-        return True        
+#MAKES TWENTY: Given two integers, return True if the sum 
+#of the integers is 20 or if one of the integers is 20.
+#If not, return False
+
+def makes_twenty(n1,n2):
+    
+    if n1 + n2 == 20 or n1 == 20 or n2 == 20:
+        return True
     else:
         return False
-    
-print(animal_crackers('Levelheaded Llama'))
+print(makes_twenty(2,3))
+
+

@@ -550,12 +550,25 @@
 #of the integers is 20 or if one of the integers is 20.
 #If not, return False
 
-def makes_twenty(n1,n2):
-    
-    if n1 + n2 == 20 or n1 == 20 or n2 == 20:
-        return True
-    else:
-        return False
-print(makes_twenty(2,3))
+#def makes_twenty(n1,n2):
+#    
+#    if n1 + n2 == 20 or n1 == 20 or n2 == 20:
+#        return True
+#    else:
+#        return False
+#print(makes_twenty(2,3))
 
+
+# LEVEL 1 PROBLEMS (CHECK)
+
+#OLD MACDONALD: Write a function that capitalizes the first
+# and fourth letters of a name 
+
+def old_macdonald(name):
+    
+    halfname = name[3:]
+    recasedname = name.capitalize()[0:3] + halfname.capitalize() 
+    return recasedname
+    
+print(old_macdonald('macdonald'))
 

@@ -597,4 +597,24 @@
 #    
 #print(almost_there(189))
 
-#LEVEL 2 PROBLEMS¶
+
+# LEVEL 2 PROBLEMS
+
+#FIND 33:
+
+#Given a list of ints, return True if the array
+#contains a 3 next to a 3 somewhere.
+
+#def has_33(nums):
+#
+#    if '33' in ''.join(str(n) for n in nums):
+#        return True
+#    else:
+#        return False
+#            
+#print(has_33([3,3,1,3]))
+
+for n in nums:
+    str(n)
+
+

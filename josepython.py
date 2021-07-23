@@ -694,7 +694,20 @@
 #print(spy_game([1,2,4,0,0,7,5]))
 
 
+#COUNT PRIMES: Write a function that 
+#returns the number of prime numbers 
+#that exist up to and including a given number
+def count_primes(num):
 
+    x = []
+    for i in range(2, num):
+        if (i % 2 == 0 or i % 3 == 0 
+            or i % 5 == 0 or i % 7 == 0) :
+            pass
+        else:
+            x.append(i)
+    return (len(x)+4)
+            
+print(count_primes(100))
 
-
-
+#PRINT BIG: Write a function that takes in a single letter, and returns a 5x5 representation of that letter

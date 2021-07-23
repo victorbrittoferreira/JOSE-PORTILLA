@@ -642,7 +642,7 @@
 #def blackjack(a,b,c):
 #    bjsum = a + b + c
 #
-#    if bjsum > 21 and a == 11 or b == 11 or c == 11:
+#    if bjsum > 21 or (a == 11 or b == 11 or c == 11):
 #        bjsum -= 10
 #        #print(bjsum)
 #        if bjsum < 21:
@@ -652,7 +652,22 @@
 #    elif bjsum <= 21:
 #            return bjsum
 #    
-#print(blackjack(5,6,7))
+#print(blackjack(9,9,9))
 
-        
-    
+# SUMMER OF '69: Return the sum of the numbers in the array,
+# except ignore sections of numbers starting with a 6 and
+# extending to the next 9 (every 6 will be followed by at 
+# least one 9). Return 0 for no numbers.
+
+def summer_69(arr):
+
+    num_sum = 0
+    for num in arr:
+           
+        if not 6 <= num <= 9:
+            num_sum = num_sum + num 
+        else:
+            pass
+    return num_sum
+
+print(summer_69([2, 1, 6, 9, 11]))

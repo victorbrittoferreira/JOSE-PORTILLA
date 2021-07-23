@@ -515,17 +515,11 @@
 
 #def lesser_of_two_evens(a,b):
 #    if a % 2 == 0 and b % 2 == 0:
-#        if a < b:
-#            return a
-#        else:
-#            pass
+#        return min (a,b)
 #    else:
-#        if a > b:
-#            return a
-#        else:
-#            return b
+#        return max (a,b)
 #        
-#print(lesser_of_two_evens(2,5))
+#print(lesser_of_two_evens(10,20))
 
 #2 ANIMAL CRACKERS: Write a function takes a two-word string and 
 #returns True if both words begin with same letter
@@ -697,17 +691,20 @@
 #COUNT PRIMES: Write a function that 
 #returns the number of prime numbers 
 #that exist up to and including a given number
-def count_primes(num):
+#def count_primes(num):
+#
+#    x = []
+#    for i in range(2, num):
+#        if (i % 2 == 0 or i % 3 == 0 
+#            or i % 5 == 0 or i % 7 == 0) :
+#            pass
+#        else:
+#            x.append(i)
+#    return (len(x)+4)
+#            
+#print(count_primes(100))
 
-    x = []
-    for i in range(2, num):
-        if (i % 2 == 0 or i % 3 == 0 
-            or i % 5 == 0 or i % 7 == 0) :
-            pass
-        else:
-            x.append(i)
-    return (len(x)+4)
-            
-print(count_primes(100))
+#PRINT BIG: Write a function that takes
+# in a single letter, and returns a 5x5
+# representation of that letter
 
-#PRINT BIG: Write a function that takes in a single letter, and returns a 5x5 representation of that letter

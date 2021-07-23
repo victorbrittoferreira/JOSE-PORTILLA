@@ -659,15 +659,42 @@
 # extending to the next 9 (every 6 will be followed by at 
 # least one 9). Return 0 for no numbers.
 
-def summer_69(arr):
+#def summer_69(arr):
+#
+#    num_sum = 0
+#    for num in arr:
+#           
+#        if not 6 <= num <= 9:
+#            num_sum = num_sum + num 
+#        else:
+#            pass
+#    return num_sum
+#
+#print(summer_69([2, 1, 6, 9, 11]))
 
-    num_sum = 0
-    for num in arr:
-           
-        if not 6 <= num <= 9:
-            num_sum = num_sum + num 
-        else:
-            pass
-    return num_sum
 
-print(summer_69([2, 1, 6, 9, 11]))
+# CHALLENGING PROBLEMS
+
+#SPY GAME: Write a function that takes in
+# a list of integers and returns True if 
+# it contains 007 in order
+
+#def spy_game(nums):
+#    sp_fdd = []
+#    spyer = [0,0,7]
+#    for num in nums:
+#           
+#        if 0 == num or num == 7:
+#            sp_fdd.append(num)
+#        else:
+#            pass
+#        
+#    return spyer == sp_fdd
+#
+#print(spy_game([1,2,4,0,0,7,5]))
+
+
+
+
+
+

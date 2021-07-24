@@ -524,15 +524,13 @@
 #2 ANIMAL CRACKERS: Write a function takes a two-word string and 
 #returns True if both words begin with same letter
 
-#animal_crackers('Levelheaded Llama') --> True
-#animal_crackers('Crazy Kangaroo') --> False
-
-#x = 'Levelheaded Llama'
-#print(x.split(' '))
-
 #def animal_crackers(text):
-#
-#    words = list(text.split(' '))
+####  IMPORTANT  ####
+#    words = text.lower().split()
+#    
+#    return words[0][0] == words[1][0]:
+    
+    #words = list(text.split(' '))
 #    if words[0][0] == words[1][0]:
 #        return True        
 #    else:
@@ -546,12 +544,12 @@
 
 #def makes_twenty(n1,n2):
 #    
+#    return n1 + n2 == 20 or n1 == 20 or n2 == 20
 #    if n1 + n2 == 20 or n1 == 20 or n2 == 20:
 #        return True
 #    else:
 #        return False
 #print(makes_twenty(2,3))
-
 
 # LEVEL 1 PROBLEMS (CHECK)
 

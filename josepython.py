@@ -558,7 +558,7 @@
 
 #def old_macdonald(name):
 #    
-#    return name.capitalize()[0:3] + name.capitalize()[3:] 
+#    return name.capitalize()[:3] + name.capitalize()[3:] 
     #halfname = name[3:]
     #recasedname = name.capitalize()[0:3] + halfname.capitalize() 
     #return name.capitalize()[0:3] + halfname.capitalize() 
@@ -569,14 +569,14 @@
 #MASTER YODA: Given a sentence, return a sentence with 
 #the words reversed  (CHECK)
     
-#def master_yoda(text):
-#    
-#    reversedtext = list(text.split(' '))[::-1]
-#    joinedtext = ' '.join(reversedtext)
-#    
-#    return joinedtext
-#       
-#print(master_yoda('I am home'))
+def master_yoda(text):
+    
+    reversedtext = list(text.split(' '))[::-1]
+    return  ' '.join(reversedtext)
+    
+    #return joinedtext
+       
+print(master_yoda('I am home'))
 
 
 #ALMOST THERE: Given an integer n, return True 

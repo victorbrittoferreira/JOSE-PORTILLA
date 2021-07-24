@@ -556,13 +556,14 @@
 #OLD MACDONALD: Write a function that capitalizes the first
 # and fourth letters of a name 
 
-#def old_macdonald(name):
-#    
-#    halfname = name[3:]
-#    recasedname = name.capitalize()[0:3] + halfname.capitalize() 
-#    return recasedname
-#    
-#print(old_macdonald('macdonald'))
+def old_macdonald(name):
+    
+    halfname = name[3:]
+    #recasedname = name.capitalize()[0:3] + halfname.capitalize() 
+    return name.capitalize()[0:3] + halfname.capitalize() 
+    #return recasedname
+    
+print(old_macdonald('macdonald'))
 
 #MASTER YODA: Given a sentence, return a sentence with 
 #the words reversed  (CHECK)

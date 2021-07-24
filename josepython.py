@@ -571,7 +571,8 @@
     
 def master_yoda(text):
     
-    reversedtext = list(text.split(' '))[::-1]
+    #reversedtext = list(text.split(' '))[::-1]
+    reversedtext = text.split()[::-1]
     return  ' '.join(reversedtext)
     
     #return joinedtext

@@ -569,15 +569,15 @@
 #MASTER YODA: Given a sentence, return a sentence with 
 #the words reversed  (CHECK)
     
-def master_yoda(text):
-    
-    #reversedtext = list(text.split(' '))[::-1]
-    reversedtext = text.split()[::-1]
-    return  ' '.join(reversedtext)
-    
-    #return joinedtext
-       
-print(master_yoda('I am home'))
+#def master_yoda(text):
+#    
+#    #reversedtext = list(text.split(' '))[::-1]
+#    reversedtext = text.split()[::-1]
+#    return  ' '.join(reversedtext)
+#    
+#    #return joinedtext
+#       
+#print(master_yoda('I am home'))
 
 
 #ALMOST THERE: Given an integer n, return True 

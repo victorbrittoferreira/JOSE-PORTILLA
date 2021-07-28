@@ -643,16 +643,21 @@
 # Finally, if the sum (even after adjustment) exceeds 21, 
 # return 'BUST'
 
-def blackjack(a,b,c):
-    bjsum = a + b + c
+#def blackjack(a, b ,c):
+    #bjsum = a+b+c
+#def blackjack(*n):
+#    bjlist = n
+#    bjsum = sum(n)
+#
+#    if bjsum <= 21:
+#        return bjsum
+#    elif bjsum > 21 and 11 in bjlist:
+#        return bjsum - 10
+#    else:
+#        return 'BUST'
+#    
+#print(blackjack(5,6,7))
 
-    if bjsum <= 21:
-        return bjsum
-    elif bjsum > 21 or 11 in [a,b,c]:
-        return bjsum - 10
-    else:
-        return 'BUST'
-    
 # SUMMER OF '69: Return the sum of the numbers in the array,
 # except ignore sections of numbers starting with a 6 and
 # extending to the next 9 (every 6 will be followed by at 

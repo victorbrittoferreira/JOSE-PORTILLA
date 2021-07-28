@@ -576,7 +576,9 @@
 #    return  ' '.join(reversedtext)
 #    
 #    #return joinedtext
-#       
+#    
+# what is inside ' ' is used to concatenate
+# # ''
 #print(master_yoda('I am home'))
 
 
@@ -585,12 +587,10 @@
 
 #def almost_there(n):
 #    
-#    if 90 <= n <= 110 or 190 <= n <= 210:
-#        return True
-#    else:
-#        return False
-#    
-#print(almost_there(189))
+#    return 90 <= n <= 110 or 190 <= n <= 210
+#    return (abs(100-n) <= 10) or (abs(200-n) <= 10)   
+ 
+#print(almost_there(180))
 
 
 # LEVEL 2 PROBLEMS
@@ -601,21 +601,23 @@
 #contains a 3 next to a 3 somewhere.
 
 #def has_33(nums):
-#
-#    if '33' in ''.join(str(n) for n in nums):
-#        return True
-#    else:
-#        return False
-#            
-#print(has_33([3,3,1,3]))
 
+#    return '33' in ''.join(str(n) for n in nums)
+    
+#    for i in range (0, len(nums)-1):
+#        #another way
+#        if nums [i:i+2] == [3,3]:
+#        #if nums[i] == 3 and nums [i+1] == 3:
+#            return True
+#    return False    
+            
+#print(has_33([1,3,1,3]))
 
 #PAPER DOLL: Given a string, return a string where
 # for every character in the original there are 
 # three characters
 
 #def paper_doll(text):      
-#    #x = [(letter * 3) for letter in text]
 #    new_text = []
 #    
 #    for letter in text:
@@ -623,6 +625,13 @@
 #
 #    return ''.join(new_text)
 #
+##               #or
+#    result = ''
+#    
+#    for letter in text:
+#        result += letter *3
+#    return result
+
 #print(paper_doll('Hello'))
 
 
@@ -634,21 +643,16 @@
 # Finally, if the sum (even after adjustment) exceeds 21, 
 # return 'BUST'
 
-#def blackjack(a,b,c):
-#    bjsum = a + b + c
-#
-#    if bjsum > 21 or (a == 11 or b == 11 or c == 11):
-#        bjsum -= 10
-#        #print(bjsum)
-#        if bjsum < 21:
-#            return bjsum
-#        else:
-#            return 'BUST'
-#    elif bjsum <= 21:
-#            return bjsum
-#    
-#print(blackjack(9,9,9))
+def blackjack(a,b,c):
+    bjsum = a + b + c
 
+    if bjsum <= 21:
+        return bjsum
+    elif bjsum > 21 or 11 in [a,b,c]:
+        return bjsum - 10
+    else:
+        return 'BUST'
+    
 # SUMMER OF '69: Return the sum of the numbers in the array,
 # except ignore sections of numbers starting with a 6 and
 # extending to the next 9 (every 6 will be followed by at 

@@ -664,7 +664,7 @@
 # least one 9). Return 0 for no numbers.
 
 #def summer_69(arr):
-#
+
 #    num_sum = 0
 #    for num in arr:
 #           
@@ -673,8 +673,27 @@
 #        else:
 #            pass
 #    return num_sum
-#
-#print(summer_69([2, 1, 6, 9, 11]))
+
+    ## another way
+##    total = 0
+##    add = True
+##    
+##    for num in arr:
+##        while add:
+##            if num != 6:
+##                total += num
+##                break
+##            else:
+##                add = False
+##        while not add:
+##            if num != 9:
+##                break
+##            else:
+##                add = True
+##                break
+##    return total
+##
+#print(summer_69([2, 1, 6,20, 9, 11]))
 
 
 # CHALLENGING PROBLEMS
@@ -718,3 +737,4 @@
 # in a single letter, and returns a 5x5
 # representation of that letter
 
+x = 1

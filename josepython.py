@@ -702,7 +702,7 @@
 # a list of integers and returns True if 
 # it contains 007 in order
 
-def spy_game(nums):
+#def spy_game(nums):
 #    sp_fdd = []
 #    spyer = [0,0,7]
 #    for num in nums:
@@ -729,7 +729,7 @@ def spy_game(nums):
 #returns the number of prime numbers 
 #that exist up to and including a given number
 #def count_primes(num):
-#
+##must be improved
 #    x = []
 #    for i in range(2, num):
 #        if (i % 2 == 0 or i % 3 == 0 
@@ -737,9 +737,34 @@ def spy_game(nums):
 #            pass
 #        else:
 #            x.append(i)
+#    print(x)
 #    return (len(x)+4)
-#            
 #print(count_primes(100))
+
+### ANTOHER way - must be redone
+#    # check for 0 or 1 input
+#    if num < 2:
+#        return 0
+#    #2 or greater numbers
+#    primes = [2]
+#    x = 3
+#    # x is going through every number up to input num
+#    while x <= num:
+#        # check if x is prime
+#        for y in range(3, x, 2):
+#            if x % y == 0:
+#                x += 2
+#                break
+#        else:
+#            primes.append(x)
+#            x += 2
+#    print(primes)
+#    return len(primes)
+#    
+#print(count_primes(100))
+
+
+
 
 #PRINT BIG: Write a function that takes
 # in a single letter, and returns a 5x5

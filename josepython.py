@@ -702,7 +702,7 @@
 # a list of integers and returns True if 
 # it contains 007 in order
 
-#def spy_game(nums):
+def spy_game(nums):
 #    sp_fdd = []
 #    spyer = [0,0,7]
 #    for num in nums:
@@ -713,6 +713,14 @@
 #            pass
 #        
 #    return spyer == sp_fdd
+## ANTOHER WAY
+#    sp_fdd = [0,0,7,'x']
+#    
+#    for num in nums:
+#        if num == sp_fdd[0]:
+#            ## take out the item
+#            sp_fdd.pop(0)
+#    return len(sp_fdd)== 1
 #
 #print(spy_game([1,2,4,0,0,7,5]))
 
@@ -736,9 +744,3 @@
 #PRINT BIG: Write a function that takes
 # in a single letter, and returns a 5x5
 # representation of that letter
-
-x = 1
-
-y = 2 
-
-z = 3 

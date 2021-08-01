@@ -763,9 +763,11 @@
 #    
 #print(count_primes(100))
 
-
-
-
 #PRINT BIG: Write a function that takes
 # in a single letter, and returns a 5x5
 # representation of that letter
+
+
+## 55 Lambda Expressions Map and Filter
+
+x = 1

@@ -771,3 +771,5 @@
 ## 55 Lambda Expressions Map and Filter
 
 x = 1
+
+y = 2

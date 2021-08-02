@@ -769,6 +769,3 @@
 
 
 ## 55 Lambda Expressions Map and Filter
-
-x = 1
-

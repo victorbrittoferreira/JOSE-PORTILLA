@@ -768,7 +768,14 @@
 # representation of that letter
 
 
+
 ## 55 Lambda Expressions Map and Filter
+
+#map function
+
+#The map function allows you to "map" a function to an iterable
+#object. That is to say you can quickly call the same function
+#to every item in an iterable, such as a list
 
 #def square (num):
 #    return num**2
@@ -778,6 +785,7 @@
 #for item in map(square, my_nums):
 #    print(item)
 #
+##another way to list, instead of appending to a list
 #print(list(map(square, my_nums)))
 
 
@@ -788,5 +796,99 @@ def splicer (mystring):
         return mystring[0]
     
 names = ['Andy', 'Eve', 'Sally']
-
+ 
 print(list(map(splicer, names)))
+
+## filter function
+
+#The filter function returns an iterator yielding those items of
+#iterable for which function(item) is true. Meaning you need to 
+#filter by a function that returns either True or False. Then 
+#passing that into filter (along with your iterable) and you 
+#will get back only the results that would return True when 
+#passed to the function.
+
+#def check_even(num):
+#    return num % 2 == 0
+#
+#nums = [0,1,2,3,4,5,6,7,8,9,10]
+#
+#filter(check_even,nums)
+#
+#list(filter(check_even,nums))
+
+
+## lambda expression
+
+#One of Pythons most useful (and for beginners, confusing) tools
+# is the lambda expression. lambda expressions allow us to
+# create "anonymous" functions. This basically means we can 
+# quickly make ad-hoc functions without needing to properly 
+# define a function using def.
+#Function objects returned by running lambda expressions work 
+# exactly the same as those created and assigned by defs.
+# There is key difference that makes lambda useful in
+# specialized roles:
+
+#lambda's body is a single expression, not a block of statements.
+
+#    The lambda's body is similar to what we would put in a def
+# body's return statement. We simply type the result as an 
+# expression instead of explicitly returning it. Because it
+# is limited to an expression, a lambda is less general that 
+# a def. We can only squeeze design, to limit program nesting. 
+# lambda is designed for coding simple functions, and def 
+# handles the larger tasks.
+
+#def square(num):
+#    return num**2
+#def square(num): return num**2
+
+#square(2)
+
+#This is the form a function that a lambda expression intends 
+#to replicate. A lambda expression can then be written as:
+
+#lambda num: num ** 2
+#square = lambda num: num **2
+#
+#square(2)
+
+#So why would use this? Many function calls need a function
+#passed in, such as map and filter. Often you only need to
+#use the function you are passing in once, so instead of 
+#formally defining it, you just use the lambda expression. 
+#Let's repeat some of the examples from above with a lambda 
+#expression
+
+#list(map(lambda num: num ** 2, my_nums))
+#
+#[1, 4, 9, 16, 25]
+#
+#list(filter(lambda n: n % 2 == 0,nums))
+#
+#[0, 2, 4, 6, 8, 10]
+
+#Here are a few more examples, keep in mind the more comples a
+#function is, the harder it is to translate into a lambda 
+#expression, meaning sometimes its just easier (and often 
+#the only way) to create the def keyword function.
+
+#Lambda expression for grabbing the first character of a string:
+
+#lambda s: s[0]
+#
+#Lambda expression for reversing a string:
+#
+#lambda s: s[::-1]
+#
+#You can even pass in multiple arguments into a lambda expression. Again, keep in mind that not every function can be translated into a lambda expression.
+#
+#lambda x,y : x + y
+
+
+#You will find yourself using lambda expressions often with 
+#certain non-built-in libraries, for example the pandas library
+#for data analysis works very well with lambda expressions.
+
+

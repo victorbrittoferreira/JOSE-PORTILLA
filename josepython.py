@@ -1012,4 +1012,4 @@
 # is an object! I can assign variables to functions just 
 # like I can with numbers!
 
-## 57
+## 57 Method

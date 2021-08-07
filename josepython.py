@@ -1012,4 +1012,23 @@
 # is an object! I can assign variables to functions just 
 # like I can with numbers!
 
-## 57 Method
+## 57 Method n Functions Homework
+
+#Write a function that computes the volume of a sphere
+# given its radius.
+
+#def vol(rad):
+#    
+#    pi = 3.14
+#    
+#    vs = (4/3)* pi * (rad**3)
+#    return vs
+#    
+#print(vol(2))
+
+#Write a function that checks whether a number is in a 
+#given range (inclusive of high and low)
+
+def ran_check(num,low,high):
+    
+    

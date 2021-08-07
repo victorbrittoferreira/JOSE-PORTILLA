@@ -1029,9 +1029,33 @@
 # Write a function that checks whether a number is in a 
 #given range (inclusive of high and low)
 
-def ran_check(num,low,high):
+#def ran_check(num,low,high):
+#    
+#    return low < num < high
+#
+#print(ran_check(5,2,7))
     
-    return low < num < high
+## Write a Python function that accepts a string and calculates
+# the number of upper case letters and lower case letters.
 
-print(ran_check(5,2,7))
+
+def calc_UL_cases (sample): 
     
+    import string
+    
+    upper =[]
+    lower =[]
+    
+    for u in list(sample):
+        if u in list(string.ascii_uppercase):
+            upper.append(u)
+        elif u in list(string.ascii_lowercase):
+            lower.append(u)
+
+    print(f'there are(s) {len(upper)} uppercase letter(s)')
+    print(f'there are(s) {len(lower)} lowercase letter(s)')
+    
+calc_UL_cases('Hello Mr. Rogers, how are you this fine Tuesday?')
+
+
+

@@ -17,7 +17,7 @@
 #print(x.split())
 
 ## create another list, but considering a paremetter
-#print(y.split('i'))
+#print(y.split('s'))
 
 ## ways to format a string in
 
@@ -492,13 +492,13 @@
 #print(myfunc('Xasdasd'))
 
 ## an advanced way
-#def myfunc(s): return ''.join(char.upper() if i%2 else char.lower() for i, char in enumerate(s))
+#def myfunc(s): return ''.join(char.upper() if s%2 else char.lower() for s, char in enumerate(s))
 
 # portilla's way
 #def myfunc(word):
 #    out = []
 #    for index in range(len(word)):
-#        #print(i)
+#        #print(s)
 #        if index %2==0:
 #            out.append(word[index].lower())
               
@@ -604,10 +604,10 @@
 
 #    return '33' in ''.join(str(n) for n in nums)
     
-#    for i in range (0, len(nums)-1):
+#    for s in range (0, len(nums)-1):
 #        #another way
-#        if nums [i:i+2] == [3,3]:
-#        #if nums[i] == 3 and nums [i+1] == 3:
+#        if nums [s:s+2] == [3,3]:
+#        #if nums[s] == 3 and nums [s+1] == 3:
 #            return True
 #    return False    
             
@@ -731,12 +731,12 @@
 #def count_primes(num):
 ##must be improved
 #    x = []
-#    for i in range(2, num):
-#        if (i % 2 == 0 or i % 3 == 0 
-#            or i % 5 == 0 or i % 7 == 0) :
+#    for s in range(2, num):
+#        if (s % 2 == 0 or s % 3 == 0 
+#            or s % 5 == 0 or s % 7 == 0) :
 #            pass
 #        else:
-#            x.append(i)
+#            x.append(s)
 #    print(x)
 #    return (len(x)+4)
 #print(count_primes(100))
@@ -962,7 +962,7 @@
 #print('x is still', x)
 #
 #If you want to assign a value to a name defined at the top
-# level of the program (i.e. not inside any kind of scope 
+# level of the program (s.e. not inside any kind of scope 
 # such as functions or classes), then you have to tell 
 # Python that the name is not local, but it is global. 
 # We do this using the global statement. It is impossible 
@@ -1038,24 +1038,61 @@
 ## Write a Python function that accepts a string and calculates
 # the number of upper case letters and lower case letters.
 
+#def calc_UL_cases (sample): 
+#    
+#    import string
+#    
+#    upper =[]
+#    lower =[]
+#    
+#    for u in list(sample):
+#        if u in list(string.ascii_uppercase):
+#            upper.append(u)
+#        elif u in list(string.ascii_lowercase):
+#            lower.append(u)
+#
+#    print(f'there are(s) {len(upper)} uppercase letter(s)')
+#    print(f'there are(s) {len(lower)} lowercase letter(s)')
+#    
+#calc_UL_cases('Hello Mr. Rogers, how are you this fine Tuesday?')
 
-def calc_UL_cases (sample): 
-    
-    import string
-    
-    upper =[]
-    lower =[]
-    
-    for u in list(sample):
-        if u in list(string.ascii_uppercase):
-            upper.append(u)
-        elif u in list(string.ascii_lowercase):
-            lower.append(u)
 
-    print(f'there are(s) {len(upper)} uppercase letter(s)')
-    print(f'there are(s) {len(lower)} lowercase letter(s)')
-    
-calc_UL_cases('Hello Mr. Rogers, how are you this fine Tuesday?')
+## Write a Python function that takes a list and returns a new list
+# with unique elements of the first list.
+
+#def unique_list(lst):
+#    
+#    return list(set(lst))
+#
+#print(unique_list([1,1,1,1,2,2,3,3,3,3,4,5]))
+
+### NAO DEU
 
 
+## Write a Python function to multiply all the numbers in a list.
+
+#def multiply(numbers):
+#    
+#    for i , n in enumerate (numbers):
+#        i += 2
+#        print(n, i)
+#        if i <= 3:
+#            n *= numbers[i]
+#            print(n)
+#    
+#    
+#print(multiply([1,2,3,-4]))
+
+#   Write a Python function that checks whether a word or
+# phrase is palindrome or not.
+
+#def palindrome(s):
+#
+#    return s.replace(' ','') == s.replace(' ','')[::-1]
+#
+#print(palindrome('kayas'))
+
+#   Write a Python function to check whether a string is
+#pangram or not. (Assume the string passed in does not
+#have any punctuation)
 

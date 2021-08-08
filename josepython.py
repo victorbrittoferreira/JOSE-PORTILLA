@@ -1066,22 +1066,19 @@
 #
 #print(unique_list([1,1,1,1,2,2,3,3,3,3,4,5]))
 
-### NAO DEU
-
 
 ## Write a Python function to multiply all the numbers in a list.
 
 #def multiply(numbers):
+#
+#    result = 1
 #    
-#    for i , n in enumerate (numbers):
-#        i += 2
-#        print(n, i)
-#        if i <= 3:
-#            n *= numbers[i]
-#            print(n)
-#    
-#    
+#    for n in numbers:
+#        result *=  n
+#    return result
+#            
 #print(multiply([1,2,3,-4]))
+
 
 #   Write a Python function that checks whether a word or
 # phrase is palindrome or not.
@@ -1096,3 +1093,10 @@
 #pangram or not. (Assume the string passed in does not
 #have any punctuation)
 
+#import string
+#
+#def ispangram(str1, alphabet=string.ascii_lowercase):
+#    
+#    return set(alphabet) == set(list(str1.lower().replace(' ','')))
+#
+#print(ispangram("The quick brown fox jumps over the lazy dog"))

@@ -1020,9 +1020,8 @@
 #def vol(rad):
 #    
 #    pi = 3.14
-#    
-#    vs = (4/3)* pi * (rad**3)
-#    return vs
+#         
+#    return (4/3)* pi * (rad**3)
 #    
 #print(vol(2))
 
@@ -1039,23 +1038,27 @@
 # the number of upper case letters and lower case letters.
 
 #def calc_UL_cases (sample): 
-#    
-#    import string
-#    
-#    upper =[]
-#    lower =[]
-#    
-#    for u in list(sample):
-#        if u in list(string.ascii_uppercase):
-#            upper.append(u)
-#        elif u in list(string.ascii_lowercase):
-#            lower.append(u)
+##
+##    lowercase, uppercase = 0 , 0
+#    lettercase = {'upper':0, 'lower':0}
 #
-#    print(f'there are(s) {len(upper)} uppercase letter(s)')
-#    print(f'there are(s) {len(lower)} lowercase letter(s)')
-#    
+#    for letter in sample:
+#        if letter.isupper():
+##            uppercase += 1
+#            lettercase['upper'] += 1
+#        elif letter.islower():
+##            lowercase += 1
+#            lettercase['lower'] += 1
+#        else:
+#            pass
+##
+##    print(f'{uppercase} uppercase')
+##    print(f'{uppercase} uppercase')
+##
+#    print(f'{lettercase["lower"]} lowercase')
+#    print(f'{lettercase["upper"]} lowercase')
+##    
 #calc_UL_cases('Hello Mr. Rogers, how are you this fine Tuesday?')
-
 
 ## Write a Python function that takes a list and returns a new list
 # with unique elements of the first list.
@@ -1084,8 +1087,9 @@
 # phrase is palindrome or not.
 
 #def palindrome(s):
+#    s.replace(' ','')
 #
-#    return s.replace(' ','') == s.replace(' ','')[::-1]
+#    return s == s[::-1]
 #
 #print(palindrome('kayas'))
 
@@ -1100,3 +1104,5 @@
 #    return set(alphabet) == set(list(str1.lower().replace(' ','')))
 #
 #print(ispangram("The quick brown fox jumps over the lazy dog"))
+
+## 59 

@@ -1136,37 +1136,59 @@ def display(row0,row1,row2):
     
 display(row0,row1,row2)
 
+
 def checkgame (row0,row1,row2):
     
+    ##LINE
     triple_x = list(3*'X')
     triple_o = list(3*'O')
     
+    ## COLUMN
+    ## between (()) its transforme into tuple
+    column0 = list((row0[0],row1[0],row2[0]))
+    column1 = list((row0[1],row1[1],row2[1]))
+    column2 = list((row0[2],row1[2],row2[2]))
+    
+    ## DIAGONAL
+    diagonal0 = list((row0[0],row1[1],row2[2]))
+    diagonal1 = list((row0[2],row1[1],row2[0]))
+    
+    
+    #LINE CHECKER
     if triple_o == row0 or row0 == triple_x:
-        print('cabou0')
+        print('linha 0')
         return True
     
     elif triple_o == row1 or row1 == triple_x:
-        print('cabou1')
+        print('linha 1')
         return True
     
     elif triple_o == row2 or row2 == triple_x:
-        print('cabou2')
+        print('linha 2')
         return True
     
-    ## COLONS
-    elif row[0] == row[1] == row[2]:
+    # COLUMN CHECKER
+    
+    elif column0 == triple_o or column0 == triple_x:
         print('coluna 0')
         return True
     
-    elif row[0] == row[1] == row[2]:
-        print('coluna 0')
+    elif column1 == triple_o or column0 == triple_x:
+        print('coluna 1')
         return True
 
-    elif row[0] == row[1] == row[2]:
-        print('coluna 0')
+    elif column2 == triple_o or column0 == triple_x:
+        print('coluna 2')
         return True
     
+    # DIAGONAL CHECKER
+    elif diagonal0 == triple_o or diagonal0 == triple_x:
+        print('diagonal 0')
+        return True
+
+    elif diagonal1 == triple_o or diagonal1 == triple_x:
+        print('coluna 1')
+        return True
     
-    #pass
 print(checkgame(row0,row1,row2))
 

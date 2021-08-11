@@ -1112,3 +1112,61 @@
 ## 61
 
 ## 62 
+
+## 65
+
+
+# 0 a 2
+
+#def choiced (choice):
+
+row0 = [' ', ' ', ' ']
+row1 = [' ', ' ', ' ']
+row2 = [' ', ' ', ' ']
+
+row2[0] = 'O'
+row2[1] = 'O'
+row2[2] = 'O'
+
+def display(row0,row1,row2):
+    
+    print(row0)
+    print(row1)
+    print(row2)
+    
+display(row0,row1,row2)
+
+def checkgame (row0,row1,row2):
+    
+    triple_x = list(3*'X')
+    triple_o = list(3*'O')
+    
+    if triple_o == row0 or row0 == triple_x:
+        print('cabou0')
+        return True
+    
+    elif triple_o == row1 or row1 == triple_x:
+        print('cabou1')
+        return True
+    
+    elif triple_o == row2 or row2 == triple_x:
+        print('cabou2')
+        return True
+    
+    ## COLONS
+    elif row[0] == row[1] == row[2]:
+        print('coluna 0')
+        return True
+    
+    elif row[0] == row[1] == row[2]:
+        print('coluna 0')
+        return True
+
+    elif row[0] == row[1] == row[2]:
+        print('coluna 0')
+        return True
+    
+    
+    #pass
+print(checkgame(row0,row1,row2))
+

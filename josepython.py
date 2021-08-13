@@ -1130,14 +1130,14 @@ mylist = [1,2,3,4,5,6,7,8,9]
 #def choiced (row0,row1,row2):
 
 
-def display():
+def display_list():
 
     print('   ','0','  ','1','  ','2')    
     print('0', row0)
     print('1', row1)
     print('2', row2)
       
-#display()
+#display_list()
 
 def user_choice_checker():
     

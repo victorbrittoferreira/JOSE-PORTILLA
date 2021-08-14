@@ -1120,9 +1120,9 @@ def display_list(mylist):
     print(mylist[1:])
 mylist = ['',1,2,3,4,5,6,7,8,9]
 
-mylist[7] = 'X'
-mylist[8] = 'X'
-mylist[9] = 'X'
+#mylist[7] = 'X'
+#mylist[4] = 'X'
+#mylist[1] = 'X'
     
 display_list(mylist)
 
@@ -1178,59 +1178,40 @@ def display_game(game_list):
     
 #display_game(game_list)
 
-column1 = list((mylist[7],mylist[4],mylist[1]))
-column2 = list((mylist[8],mylist[5],mylist[2]))
-column3 = list((mylist[9],mylist[6],mylist[3]))
-
-line1 = list(mylist[7:])
-line2 = list(mylist[4:7])
-line3 = list(mylist[1:4])
 #print( line1, line2, line3)
 
-triple_x = list(3*'X')
-triple_o = list(3*'O')
-
-print(triple_x in (line1 , line2 , line3))
 
 def checkgame (mylist):
     
-    triple_o = list(3*'O')
-triple_x = list(3*'X')
+    triple_o = ['O','O','O']
+    triple_x = ['X','X','X']
     
     ##LINE
-    
-    
-    
-    line1 = list(mylist[7:])
-    line2 = list(mylist[4:7])
-    line3 = list(mylist[1:4])
+    line1 = mylist[7:]
+    line2 = mylist[4:7]
+    line3 = mylist[1:4]
     
     ## COLUMN
     ## between (()) its transforme into tuple
-    column1 = list((mylist[7],mylist[4],mylist[1]))
-    column2 = list((mylist[8],mylist[5],mylist[2]))
-    column3 = list((mylist[9],mylist[6],mylist[3]))
+    column1 = mylist[7:0:-3]
+    column2 = mylist[8:0:-3]
+    column3 = mylist[9:0:-3]
     
     ## DIAGONAL
-    diagonal0 = list((mylist[7],mylist[5],mylist[3]))
-    diagonal1 = list((mylist[9],mylist[5],mylist[1]))
+    diagonal0 = mylist[7:1:-2]
+    diagonal1 = mylist[9:0:-4]
     
     
     #LINE CHECKER
     #if triple_o == column1 or column1 == triple_x:
-    if triple_o == (column1 or column2 or column3):
+    if triple_o in (column1 or column2 or column3):
         print(' O Ganhou')
         return True
     
-    #elif triple_o == column2 or column2 == triple_x:
-    elif triple_x == (column1 or column2 == column3):
-        print('linha 1')
+    elif triple_x in (column1 or column2 or column3):
+        print('X ganhou')
         return True
-    
-    #elif triple_o == row2 or row2 == triple_x:
-    #    print('linha 2')
-    #    return True
-    
+        
     # COLUMN CHECKER
     
     #elif column0 == triple_o or column0 == triple_x:

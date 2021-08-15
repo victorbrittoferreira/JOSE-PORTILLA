@@ -1115,53 +1115,50 @@
 
 ## 65
 
-
-def display_list(mylist):
-    print(mylist[1:])
 mylist = ['',1,2,3,4,5,6,7,8,9]
 
-#mylist[7] = 'X'
-#mylist[4] = 'X'
-#mylist[1] = 'X'
-    
-display_list(mylist)
-
 def display_list():
-    
+    #print(mylist[1:])
+
     print(mylist[7],'|',mylist[8],'|',mylist[9])
     print('---------')
     print(mylist[4],'|',mylist[5],'|',mylist[6])
     print('---------')
     print(mylist[1],'|',mylist[2],'|',mylist[3])
-     
+
 display_list()
 
 
-def user_choice_checker():
+def position_choice():
     
     import os 
     os.system("clear") 
        
     choice = ''
     within_range = False
+    postion_range = range(1,10)
     
     while choice.isdigit() == False or within_range == False:
-        
-        choice = input('Choose a number postion(1~9): ')
+        print('')
+        display_list()
+        print('')
+        choice = input('Choose a postion to replace(1~9): ')
         
         if choice.isdigit() == False:
             #print('\n'*100)
             #print('\033[H\033[J', end='')
-            print('Sry! Not a digit or out of range')
+            print('')
+            print('Sry! It isnt a digit or out of range!')
             
             
         elif choice.isdigit() == True:
-            if int(choice) in range(1,10):
+            if int(choice) in postion_range:
                 within_range = True
             else:
                 within_range = False
                 #print('\033[H\033[J', end='')
-                print('Its out of range')
+                print('')
+                print('Its out of range!')
     
     #clear everything after running the function   
     #print('\033[H\033[J', end='')
@@ -1169,7 +1166,9 @@ def user_choice_checker():
 
     return int(choice)
 
-#print(user_choice_checker())
+print(position_choice())
+
+
 
 
 def display_game(game_list):
@@ -1178,17 +1177,15 @@ def display_game(game_list):
     
 #display_game(game_list)
 
-#print( line1, line2, line3)
 
-
-def checkgame (mylist):
+def checkgame ():
     
     triple_o = ['O','O','O']
     triple_x = ['X','X','X']
     
     ##LINE
     line1 = mylist[7:]
-    line2 = mylist[4:7]
+    line2 = mylist[4:7] 
     line3 = mylist[1:4]
     
     ## COLUMN
@@ -1200,43 +1197,34 @@ def checkgame (mylist):
     ## DIAGONAL
     diagonal0 = mylist[7:1:-2]
     diagonal1 = mylist[9:0:-4]
-    
-    
+  
     #LINE CHECKER
-    #if triple_o == column1 or column1 == triple_x:
-    if triple_o in (column1 or column2 or column3):
-        print(' O Ganhou')
+    if triple_o in ( line1 , line2 , line3 ):
+        print('O - linha')
+        return True
+    elif triple_x in ( line1 , line2 , line3 ):
+        print('X - linha')
         return True
     
-    elif triple_x in (column1 or column2 or column3):
-        print('X ganhou')
-        return True
-        
     # COLUMN CHECKER
+    elif triple_o in (column1 , column2 , column3):
+        print('O - coluna')
+        return True
     
-    #elif column0 == triple_o or column0 == triple_x:
-    #    print('coluna 0')
-    #    return True
-    #
-    #elif column1 == triple_o or column0 == triple_x:
-    #    print('coluna 1')
-    #    return True
-#
-    #elif column2 == triple_o or column0 == triple_x:
-    #    print('coluna 2')
-    #    return True
-    #
+    elif triple_x in (column1 , column2 , column3):
+        print('X - coluna')
+        return True
+
     ## DIAGONAL CHECKER
-    #elif diagonal0 == triple_o or diagonal0 == triple_x:
-    #    print('diagonal 0')
-    #    return True
-#
-    #elif diagonal1 == triple_o or diagonal1 == triple_x:
-    #    print('coluna 1')
-    #    return True
-    #
-    #else:
-    #    return False
-    #
-#print(checkgame(mylist))
+    elif  triple_o in (diagonal0 , diagonal1):
+        print('O diagonal')
+        return True
+    elif  triple_x in (diagonal0 , diagonal1):
+        print('X diagonal')
+        return True
+    else:
+        print('Saporra não acabou!')
+        return False
+    
+#print(checkgame())
 

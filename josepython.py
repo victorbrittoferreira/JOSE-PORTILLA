@@ -1233,3 +1233,5 @@ checkgame()
 
 def gameon_choice():
     pass
+
+d = x

@@ -1117,24 +1117,8 @@
 
 game_on = True
 
-#game_list = ['',1,2,3,4,5,6,7,8,9]
-game_list = ['','X',2,'X',4,5,6,'O',8,'O']
-
-
-#x = game_list.count('X')
-#o = game_list.count('O')
-#print(x>=3)
-#print(3<=o)
-#print(x,o)
-#
-#if x >=  3 or 3 <= o:
-#    print ('>3')    
-#    #y = letter.count('Y')
-#    #letter.append(x)
-#    #if x >= 3 >= y:
-#else:
-#    print('<3')
-
+game_list = ['',1,2,3,4,5,6,7,8,9]
+#game_list = ['','X',2,'X',4,5,6,'O',8,'O']
 
 def display_game():
     #print(game_list[1:])
@@ -1144,9 +1128,6 @@ def display_game():
     print(game_list[4],'|',game_list[5],'|',game_list[6])
     print('---------')
     print(game_list[1],'|',game_list[2],'|',game_list[3])
-
-#display_game()
-
 
 def position_choice():
     
@@ -1185,9 +1166,6 @@ def position_choice():
 
     return int(choice)
 
-#position_choice()
-
-
 def replacement_choice(game_list,position):
     
     #choice = position_choice()
@@ -1197,10 +1175,6 @@ def replacement_choice(game_list,position):
     game_list[position] = user_placement.upper()
 
     return game_list
-
-#replacement_choice(game_list)
-#display_game()
-
 
 def checkgame ():
     
@@ -1255,9 +1229,6 @@ def checkgame ():
         
     else:
         return False
-    
-#print(checkgame())
-
 
 def gameon_choice():
     choice = ''

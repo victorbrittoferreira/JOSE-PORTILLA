@@ -1115,18 +1115,37 @@
 
 ## 65
 
+game_on = True
 
-mylist = ['',1,2,3,4,5,6,7,8,9]
-def display_list():
-    #print(mylist[1:])
+#game_list = ['',1,2,3,4,5,6,7,8,9]
+game_list = ['','X',2,'X',4,5,6,'O',8,'O']
 
-    print(mylist[7],'|',mylist[8],'|',mylist[9])
+
+#x = game_list.count('X')
+#o = game_list.count('O')
+#print(x>=3)
+#print(3<=o)
+#print(x,o)
+#
+#if x >=  3 or 3 <= o:
+#    print ('>3')    
+#    #y = letter.count('Y')
+#    #letter.append(x)
+#    #if x >= 3 >= y:
+#else:
+#    print('<3')
+
+
+def display_game():
+    #print(game_list[1:])
+
+    print(game_list[7],'|',game_list[8],'|',game_list[9])
     print('---------')
-    print(mylist[4],'|',mylist[5],'|',mylist[6])
+    print(game_list[4],'|',game_list[5],'|',game_list[6])
     print('---------')
-    print(mylist[1],'|',mylist[2],'|',mylist[3])
+    print(game_list[1],'|',game_list[2],'|',game_list[3])
 
-display_list()
+#display_game()
 
 
 def position_choice():
@@ -1140,7 +1159,7 @@ def position_choice():
     
     while choice.isdigit() == False or within_range == False:
         print('')
-        display_list()
+        display_game()
         print('')
         choice = input('Choose a postion to replace(1~9): ')
         
@@ -1168,18 +1187,20 @@ def position_choice():
 
 #position_choice()
 
-def replacement_choice(mylist):
+
+def replacement_choice(game_list,position):
     
-    choice = position_choice()
+    #choice = position_choice()
     
     user_placement = input('Type X or O: ')
     
-    mylist[choice] = user_placement
+    game_list[position] = user_placement.upper()
 
-    return mylist
+    return game_list
 
-replacement_choice(mylist)
-display_list()
+#replacement_choice(game_list)
+#display_game()
+
 
 def checkgame ():
     
@@ -1187,51 +1208,84 @@ def checkgame ():
     triple_x = ['X','X','X']
     
     ##LINE
-    line1 = mylist[7:]
-    line2 = mylist[4:7] 
-    line3 = mylist[1:4]
+    line1 = game_list[7:]
+    line2 = game_list[4:7] 
+    line3 = game_list[1:4]
     
     ## COLUMN
     ## between (()) its transforme into tuple
-    column1 = mylist[7:0:-3]
-    column2 = mylist[8:0:-3]
-    column3 = mylist[9:0:-3]
+    column1 = game_list[7:0:-3]
+    column2 = game_list[8:0:-3]
+    column3 = game_list[9:0:-3]
     
     ## DIAGONAL
-    diagonal0 = mylist[7:1:-2]
-    diagonal1 = mylist[9:0:-4]
-  
-    #LINE CHECKER
-    if triple_o in ( line1 , line2 , line3 ):
-        print('O - linha')
-        return True
-    elif triple_x in ( line1 , line2 , line3 ):
-        print('X - linha')
-        return True
-    
-    # COLUMN CHECKER
-    elif triple_o in (column1 , column2 , column3):
-        print('O - coluna')
-        return True
-    
-    elif triple_x in (column1 , column2 , column3):
-        print('X - coluna')
-        return True
+    diagonal0 = game_list[7:1:-2]
+    diagonal1 = game_list[9:0:-4]
 
-    ## DIAGONAL CHECKER
-    elif  triple_o in (diagonal0 , diagonal1):
-        print('O diagonal')
-        return True
-    elif  triple_x in (diagonal0 , diagonal1):
-        print('X diagonal')
-        return True
+    x = game_list.count('X')
+    o = game_list.count('O')
+    
+    if x >= 3 or 3 <=o:
+
+        
+        #LINE CHECKER
+        if triple_o in ( line1 , line2 , line3 ):
+            winner = 'O line'
+            return True , winner
+        elif triple_x in ( line1 , line2 , line3 ):
+            winner = 'X line'
+            return True, winner
+        # COLUMN CHECKER
+        elif triple_o in (column1 , column2 , column3):
+            winner = 'O column'
+            return True, winner
+        elif triple_x in (column1 , column2 , column3):
+            winner = 'X column'
+            return True, winner
+        ## DIAGONAL CHECKER
+        elif  triple_o in (diagonal0 , diagonal1):
+            winner = 'O diagonal'
+            return True, winner
+        elif  triple_x in (diagonal0 , diagonal1):
+            winner = 'X diagonal'
+            return True, winner
+        else:
+            #print('Saporra não acabou!')
+            return False
+        
     else:
-        print('Saporra não acabou!')
         return False
     
-checkgame()
+#print(checkgame())
+
 
 def gameon_choice():
-    pass
+    choice = ''
+    result = checkgame()
+    
+    if result == False:
+        while choice.upper() not in ['Y','N']:
 
-d = x
+            choice = input("Would you like to keep playing? Y or N: ")
+
+            if choice.upper() not in ['Y','N']:
+                print("Please make sure to choose Y or N: ")
+
+        if choice.upper() == 'Y':
+            return True
+        else:
+            return False
+    else:
+        print(f'Winner - {result[1]}')       
+
+while game_on:
+    
+    display_game()
+
+    position = position_choice()
+    
+    game_list = replacement_choice(game_list, position)
+    
+    display_game()
+    
+    game_on = gameon_choice()

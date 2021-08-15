@@ -1115,8 +1115,8 @@
 
 ## 65
 
-mylist = ['',1,2,3,4,5,6,7,8,9]
 
+mylist = ['',1,2,3,4,5,6,7,8,9]
 def display_list():
     #print(mylist[1:])
 
@@ -1166,17 +1166,20 @@ def position_choice():
 
     return int(choice)
 
-print(position_choice())
+#position_choice()
 
-
-
-
-def display_game(game_list):
-    print("Here is the current list")
-    print(game_list)
+def replacement_choice(mylist):
     
-#display_game(game_list)
+    choice = position_choice()
+    
+    user_placement = input('Type X or O: ')
+    
+    mylist[choice] = user_placement
 
+    return mylist
+
+replacement_choice(mylist)
+display_list()
 
 def checkgame ():
     
@@ -1226,5 +1229,8 @@ def checkgame ():
         print('Saporra não acabou!')
         return False
     
-#print(checkgame())
+checkgame())
+
+def gameon_choice():
+
 

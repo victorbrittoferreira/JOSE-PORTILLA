@@ -1229,8 +1229,7 @@ def checkgame ():
         print('Saporra não acabou!')
         return False
     
-checkgame())
+checkgame()
 
 def gameon_choice():
-
-
+    pass

@@ -1115,12 +1115,9 @@
 
 ## 65
 
-game_on = True
-
 game_list = ['',1,2,3,4,5,6,7,8,9]
-#game_list = ['','X',2,'X',4,5,6,'O',8,'O']
 
-def display_game():
+def display_game ():
     #print(game_list[1:])
 
     print(game_list[7],'|',game_list[8],'|',game_list[9])
@@ -1129,7 +1126,7 @@ def display_game():
     print('---------')
     print(game_list[1],'|',game_list[2],'|',game_list[3])
 
-def position_choice():
+def position_choice ():
     
     import os 
     os.system("clear") 
@@ -1166,10 +1163,10 @@ def position_choice():
 
     return int(choice)
 
-def replacement_choice(game_list,position):
+def replacement_choice ():
     
-    #choice = position_choice()
-    
+    position = position_choice()
+
     user_placement = input('Type X or O: ')
     
     game_list[position] = user_placement.upper()
@@ -1230,7 +1227,7 @@ def checkgame ():
     else:
         return False
 
-def gameon_choice():
+def gameon_choice ():
     choice = ''
     result = checkgame()
     
@@ -1249,14 +1246,22 @@ def gameon_choice():
     else:
         print(f'Winner - {result[1]}')       
 
-while game_on:
+def  gaming ():
     
-    display_game()
+    game_on = True
+    
+    while game_on:
 
-    position = position_choice()
-    
-    game_list = replacement_choice(game_list, position)
-    
-    display_game()
-    
-    game_on = gameon_choice()
+        display_game()
+
+        #position = position_choice()
+
+        #game_list = replacement_choice(game_list, position)
+
+        game_list = replacement_choice()
+
+        display_game()
+
+        game_on = gameon_choice()
+        
+gaming ()

@@ -1115,31 +1115,54 @@
 
 ## 65
 
-game_list = ['',1,2,3,4,5,6,7,8,9]
+game_list = ['',1,2,'X',4,5,6,7,8,9]
+#player1 , player2 = '', ''
 
 def display_game ():
-    #print(game_list[1:])
-
+    print('')
     print(game_list[7],'|',game_list[8],'|',game_list[9])
     print('---------')
     print(game_list[4],'|',game_list[5],'|',game_list[6])
     print('---------')
     print(game_list[1],'|',game_list[2],'|',game_list[3])
 
-def position_choice ():
+def players():
+    letters = ['X','O']
+    player1 = ''
+    player2 = ''
     
-    import os 
-    os.system("clear") 
+    while player1 not in letters:
+        
+        player1 = input('Player1 - Choose X or O: ').upper()
+        
+        if player1.upper() == 'X':
+            player2 = 'o'.upper()
+            print(f'Player 2 = {player2}')
+            #print(f'Player2 is = {player2}')
+        elif player1.upper() == 'O':
+            player2 = 'x'.upper()
+            print(f'Player 2 = {player2}')
+            
+            
+            
+    return player1, player2
+## BIZU - Unpacking
+player1, player2 = players()
+
+def position_choice (player):
+    
+    #import os 
+    #os.system("clear") 
        
     choice = ''
     within_range = False
     postion_range = range(1,10)
     
     while choice.isdigit() == False or within_range == False:
+        #display_game()
         print('')
-        display_game()
-        print('')
-        choice = input('Choose a postion to replace(1~9): ')
+        choice = input(f'{player} a postion to replace(1~9): ')
+        
         
         if choice.isdigit() == False:
             #print('\n'*100)
@@ -1165,11 +1188,27 @@ def position_choice ():
 
 def replacement_choice ():
     
-    position = position_choice()
 
-    user_placement = input('Type X or O: ')
-    
-    game_list[position] = user_placement.upper()
+    if player1 == 'X':
+        print('')
+        display_game()
+        
+        player = 'Player1'
+        position = position_choice(player)
+        #position = position_choice()
+        #game_list[position] = user_placement.upper()
+        game_list[position] = 'X'
+        
+
+    elif player1 == 'O':
+        print('')
+        display_game()
+        
+        player = 'Player1'
+        position = position_choice(player)
+        #position = position_choice()
+        #game_list[position] = user_placement.upper()
+        game_list[position] = 'O'
 
     return game_list
 
@@ -1228,13 +1267,13 @@ def checkgame ():
         return False
 
 def gameon_choice ():
-    choice = ''
+    choice = "Y"
     result = checkgame()
     
     if result == False:
         while choice.upper() not in ['Y','N']:
 
-            choice = input("Would you like to keep playing? Y or N: ")
+            #choice = input("Would you like to keep playing? Y or N: ")
 
             if choice.upper() not in ['Y','N']:
                 print("Please make sure to choose Y or N: ")
@@ -1244,21 +1283,22 @@ def gameon_choice ():
         else:
             return False
     else:
+        print('')
         print(f'Winner - {result[1]}')       
 
 def  gaming ():
     
     game_on = True
-    
+        
     while game_on:
-
-        display_game()
-
+        
         #position = position_choice()
 
         #game_list = replacement_choice(game_list, position)
-
+        #print('\033[H\033[J', end='')
+        
         game_list = replacement_choice()
+        #print('\033[H\033[J', end='')
 
         display_game()
 

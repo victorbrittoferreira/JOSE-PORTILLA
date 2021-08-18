@@ -1238,7 +1238,7 @@ def checkgame ():
     if x >= 3 or 3 <=o:
 
         
-        #LINE CHECKER
+        #LINE CHECKER3
         if triple_o in ( line1 , line2 , line3 ):
             winner = 'O line'
             return True , winner
@@ -1305,3 +1305,6 @@ def  gaming ():
         game_on = gameon_choice()
         
 gaming ()
+
+
+a = s

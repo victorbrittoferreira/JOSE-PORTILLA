@@ -1119,26 +1119,41 @@
 #game_list = ['',1,2,3,4,5,6,7,8,9,10]
 
 def players():
-    letters = ['X','O']
-    player1 = ''
-    player2 = ''
+    #letters = ['X','O']
+    #player1 = ''
+    #player2 = ''
+    #
+    #while player1 not in letters:
+    #    
+    #    player1 = input('Player1 - Choose X or O: ').upper()
+    #    
+    #    if player1.upper() == 'X':
+    #        player2 = 'o'.upper()
+    #        print(f'Player 2 = {player2}')
+    #        #print(f'Player2 is = {player2}')
+    #    elif player1.upper() == 'O':
+    #        player2 = 'x'.upper()
+    #        print(f'Player 2 = {player2}')
+    #        
+    #return player1, player2
+     
+    #####################################       
+ 
+    marker = ''
     
-    while player1 not in letters:
+    #keep asking player1 
+        while marker!= 'X' and marker != 'Y':
+            marker = input('Player1 choose X or O: ')     
+    #assign player2
+        player1 = marker
         
-        player1 = input('Player1 - Choose X or O: ').upper()
+        if player1 =='X':
+            player2 = 'Y'
+        else:
+            player2 = 'X'  
         
-        if player1.upper() == 'X':
-            player2 = 'o'.upper()
-            print(f'Player 2 = {player2}')
-            #print(f'Player2 is = {player2}')
-        elif player1.upper() == 'O':
-            player2 = 'x'.upper()
-            print(f'Player 2 = {player2}')
-            
-            
-            
     return player1, player2
-
+            
 def display_game ():
     print('')
     print(game_list[7],'|',game_list[8],'|',game_list[9])

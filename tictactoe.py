@@ -1,25 +1,20 @@
 
-game_list = ['',1,2,3,4,5,6,7,8,9,10]
+#game_list = ['',1,2,3,4,5,6,7,8,9,10]
+game_list = ['','X','O','X','X','X','O','O','O',9]
 
 def players():
-    letters = ['X','O']
-    player1 = ''
-    player2 = ''
+    marker = ''
+    #keep asking player1 
+    while marker != 'X' and marker != 'O':
+        marker = input('Player1 choose X or O: ').upper()     
+    #assign player2
+        player1 = marker
+
+        if player1 =='X':
+            player2 = 'O'
+        else:
+            player2 = 'X'  
     
-    while player1 not in letters:
-        
-        player1 = input('Player1 - Choose X or O: ').upper()
-        
-        if player1.upper() == 'X':
-            player2 = 'o'.upper()
-            print(f'Player 2 = {player2}')
-            #print(f'Player2 is = {player2}')
-        elif player1.upper() == 'O':
-            player2 = 'x'.upper()
-            print(f'Player 2 = {player2}')
-            
-            
-            
     return player1, player2
 
 def display_game ():
@@ -30,33 +25,13 @@ def display_game ():
     print('---------')
     print(game_list[1],'|',game_list[2],'|',game_list[3])
     
-def players():
-    letters = ['X','O']
-    player1 = ''
-    player2 = ''
-    
-    while player1 not in letters:
-        
-        player1 = input('Player1 - Choose X or O: ').upper()
-        
-        if player1.upper() == 'X':
-            player2 = 'o'.upper()
-            print(f'Player 2 = {player2}')
-            #print(f'Player2 is = {player2}')
-        elif player1.upper() == 'O':
-            player2 = 'x'.upper()
-            print(f'Player 2 = {player2}')
-            
-            
-            
-    return player1, player2
-
 def position_choice ():
     
     #import os 
     #os.system("clear") 
        
     choice = ''
+    filled = ['X','O']
     within_range = False
     postion_range = range(1,10)
     
@@ -86,12 +61,16 @@ def position_choice ():
 
 def replacement_choice (playerletter):
     
-    display_game()
-
-    position = position_choice()
-    game_list[position] = playerletter.upper()
+    filled = ['X','O']
     
-    return game_list
+    display_game()
+    position = position_choice()
+    
+    while game_list[position] in filled:
+        print('Sry! Its filled!')
+        position = position_choice()
+        
+    game_list[position] = playerletter.upper()
 
 def checkgame ():
  
@@ -119,41 +98,32 @@ def checkgame ():
     x = game_list.count('X')
     o = game_list.count('O')
     
-    #if x >= 3 or 3 <=o:
+    if x >= 3 or 3 <=o:
     
-    #LINE CHECKER3
-    if triple_o in ( line1 , line2 , line3 ):
-        winner = 'O line'
-        return True , winner
-    elif triple_x in ( line1 , line2 , line3 ):
-        winner = 'X line'
-        return True, winner
-    
-    # COLUMN CHECKER
-    elif triple_o in (column1 , column2 , column3):
-        winner = 'O column'
-        return True, winner
-    elif triple_x in (column1 , column2 , column3):
-        winner = 'X column'
-        return True, winner
+        #LINE CHECKER3
+        if triple_o in ( line1 , line2 , line3 ):
+            return True , 'O line'
+        elif triple_x in ( line1 , line2 , line3 ):
+            return True, 'X line'
 
-    ## DIAGONAL CHECKER
-    elif  triple_o in (diagonal0 , diagonal1):
-        winner = 'O diagonal'
-        return True, winner
-    elif  triple_x in (diagonal0 , diagonal1):
-        winner = 'X diagonal'
-        return True, winner
+        # COLUMN CHECKER
+        elif triple_o in (column1 , column2 , column3):
+            return True, 'O column'
+        elif triple_x in (column1 , column2 , column3):
+            return True, 'X column'
+
+        ## DIAGONAL CHECKER
+        elif  triple_o in (diagonal0 , diagonal1):
+            return True, 'O diagonal'
+        elif  triple_x in (diagonal0 , diagonal1):
+            return True, 'X diagonal'
+        elif game_list.count('O') == 5 or game_list.count('X') == 5:
+            return False, "Game over! It's a tie!"
+        else:
+            return False
+    
     else:
-        #print('Saporra não acabou!')
         return False
-    
-    #else:
-    #    return False
-
-#display_game()
-#print('')
-#print(checkgame())
 
 def swap():
     player1, player2 = players()
@@ -191,10 +161,12 @@ def swap():
             else:
                 p1turn = True
                 p2turn = False
-    
-    print (f'Winner! Player letter  {checkgame ()[1]}')
+                
+    display_game()
+    print('')
+    return checkgame ()[1]
             
-swap()
+print(swap())
 
 def  gaming ():
     

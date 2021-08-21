@@ -1116,40 +1116,22 @@
 ## 65
 
 
-#game_list = ['',1,2,3,4,5,6,7,8,9,10]
+game_list = ['',1,2,3,4,5,6,7,8,9,10]
 
 def players():
-    #letters = ['X','O']
-    #player1 = ''
-    #player2 = ''
-    #
-    #while player1 not in letters:
-    #    
-    #    player1 = input('Player1 - Choose X or O: ').upper()
-    #    
-    #    if player1.upper() == 'X':
-    #        player2 = 'o'.upper()
-    #        print(f'Player 2 = {player2}')
-    #        #print(f'Player2 is = {player2}')
-    #    elif player1.upper() == 'O':
-    #        player2 = 'x'.upper()
-    #        print(f'Player 2 = {player2}')
-    #        
-    #return player1, player2
-     
-    #####################################       
- 
     marker = ''
     
     #keep asking player1 
-        while marker!= 'X' and marker != 'Y':
-            marker = input('Player1 choose X or O: ')     
+    while marker!= 'X' and marker != 'O':
+        marker = input('Player1 choose X or O: ').upper()  
     #assign player2
         player1 = marker
-        
+    
         if player1 =='X':
-            player2 = 'Y'
+            print('Player2 = O')
+            player2 = 'O'
         else:
+            print('Player2 = X')
             player2 = 'X'  
         
     return player1, player2
@@ -1162,27 +1144,6 @@ def display_game ():
     print('---------')
     print(game_list[1],'|',game_list[2],'|',game_list[3])
     
-def players():
-    letters = ['X','O']
-    player1 = ''
-    player2 = ''
-    
-    while player1 not in letters:
-        
-        player1 = input('Player1 - Choose X or O: ').upper()
-        
-        if player1.upper() == 'X':
-            player2 = 'o'.upper()
-            print(f'Player 2 = {player2}')
-            #print(f'Player2 is = {player2}')
-        elif player1.upper() == 'O':
-            player2 = 'x'.upper()
-            print(f'Player 2 = {player2}')
-            
-            
-            
-    return player1, player2
-
 def position_choice ():
     
     #import os 
@@ -1217,13 +1178,17 @@ def position_choice ():
     return int(choice)
 
 def replacement_choice (playerletter):
-    
-    display_game()
 
+    display_game()
     position = position_choice()
-    game_list[position] = playerletter.upper()
     
-    return game_list
+    while game_list[position] not in range(1,10):
+        print('Choose a UNFILLED postion!')
+        position = position_choice()
+    else:
+        game_list[position] = playerletter.upper()
+    
+    #return game_list
 
 def checkgame ():
  
@@ -1295,7 +1260,8 @@ def swap():
     while swap_player and checkgame() == False:
         while p1turn and checkgame () == False:
             playerletter = player1
-            print('')
+            print('\n'*100)
+            #print('')
             print('-------P1-------')
             replacement_choice (playerletter)
             
@@ -1305,11 +1271,11 @@ def swap():
                 p1turn = False
                 p2turn = True
             
-            
         
         while p2turn and checkgame () == False:
             playerletter = player2
-            print('')
+            print('\n'*100)
+            #print('')
             print('-------P2-------')
             replacement_choice (playerletter)
                        
@@ -1319,6 +1285,7 @@ def swap():
                 p1turn = True
                 p2turn = False
     
-    print (f'Winner! Player letter  {checkgame ()[1]}')
+    print (f'Winner! Player letter {checkgame ()[1]}')
             
-#swap()
+swap()
+

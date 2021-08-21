@@ -1116,13 +1116,23 @@
 ## 65
 
 
-game_list = ['',1,2,3,4,5,6,7,8,9,10]
+#game_list = ['',1,2,3,4,5,6,7,8,9,10]
+
+#game_list = ['',1,2,3,4,5,6,'O','O','O',10]
+#game_list = ['',1,2,'O',4,5,'O',7,8,'O',10]
+#game_list = ['','O',2,3,4,'O',6,7,8,'O',10]
+
+#game_list = ['',1,2,3,4,5,6,'X','X','X',10]
+#game_list = ['',1,2,'X',4,5,'X',7,8,'X',10]
+#game_list = ['','X',2,3,4,'X',6,7,8,'X',10]
 
 def players():
     marker = ''
     
     #keep asking player1 
-    while marker!= 'X' and marker != 'O':
+    #while marker!= 'X' and marker != 'O':
+    #        OR
+    while not (marker == 'X' and marker == 'O'):
         marker = input('Player1 choose X or O: ').upper()  
     #assign player2
         player1 = marker
@@ -1192,66 +1202,46 @@ def replacement_choice (playerletter):
 
 def checkgame ():
  
-    triple_o = ['O','O','O']
-    triple_x = ['X','X','X']
+    triple_o, triple_x  = ['O','O','O'],['X','X','X']
     
     ##LINE
-    line1 = game_list[7:10]
-    line2 = game_list[4:7] 
-    line3 = game_list[1:4]
-    
-
+    line = game_list[7:10] , game_list[4:7] ,game_list[1:4]
     ## COLUMN
     ## between (()) its transforme into tuple
-    column1 = game_list[7:0:-3]
-    column2 = game_list[8:0:-3]
-    column3 = game_list[9:0:-3]
-    
-    
+    column = game_list[7:0:-3], game_list[8:0:-3], game_list[9:0:-3]
     ## DIAGONAL
-    diagonal0 = game_list[7:1:-2]
-    diagonal1 = game_list[9:0:-4]
+    diagonal = game_list[7:1:-2], game_list[9:0:-4]
 
-
-    x = game_list.count('X')
-    o = game_list.count('O')
-    
-    
     #LINE CHECKER3
-    if triple_o in ( line1 , line2 , line3 ):
-        winner = 'O line'
+    if triple_o in line + column + diagonal:
+        if triple_o in line:
+            winner = 'O line'
+        if triple_o in column:
+            winner = 'O column'
+        if triple_o in diagonal:
+            winner = 'O diagonal'
         return True , winner
-    elif triple_x in ( line1 , line2 , line3 ):
-        winner = 'X line'
-        return True, winner
     
-    # COLUMN CHECKER
-    elif triple_o in (column1 , column2 , column3):
-        winner = 'O column'
-        return True, winner
-    elif triple_x in (column1 , column2 , column3):
-        winner = 'X column'
-        return True, winner
+    elif triple_x in line + column + diagonal:
+        if triple_x in line:
+            winner = 'X line'
+        if triple_x in column:
+            winner = 'X column'
+        if triple_x in diagonal:
+            winner = 'X diagonal'
+        return True , winner
 
-    ## DIAGONAL CHECKER
-    elif  triple_o in (diagonal0 , diagonal1):
-        winner = 'O diagonal'
-        return True, winner
-    elif  triple_x in (diagonal0 , diagonal1):
-        winner = 'X diagonal'
-        return True, winner
     else:
-        #print('Saporra não acabou!')
         return False
     
-    #else:
-    #    return False
+print(checkgame ())
+
 
 def swap():
     player1, player2 = players()
     
     p1turn = True
-    p2turn = False
+    p2turn = False 
       
     swap_player = True
     
@@ -1261,8 +1251,8 @@ def swap():
         while p1turn and checkgame () == False:
             playerletter = player1
             print('\n'*100)
-            #print('')
-            print('-------P1-------')
+            print(f'        P1 letter {playerletter}')
+            
             replacement_choice (playerletter)
             
             if checkgame() == True:
@@ -1275,8 +1265,8 @@ def swap():
         while p2turn and checkgame () == False:
             playerletter = player2
             print('\n'*100)
-            #print('')
-            print('-------P2-------')
+            print(f'        P2 letter {playerletter}')
+
             replacement_choice (playerletter)
                        
             if checkgame() == True:
@@ -1287,5 +1277,5 @@ def swap():
     
     print (f'Winner! Player letter {checkgame ()[1]}')
             
-swap()
+#swap()
 

@@ -1117,6 +1117,7 @@
 
 
 #game_list = ['',1,2,3,4,5,6,7,8,9,10]
+game_list = ['',1,'O','X','X','X','O','O','O','X',10]
 
 #game_list = ['',1,2,3,4,5,6,'O','O','O',10]
 #game_list = ['',1,2,'O',4,5,'O',7,8,'O',10]
@@ -1128,20 +1129,15 @@
 
 def players():
     marker = ''
-    
-    #keep asking player1 
     #while marker!= 'X' and marker != 'O':
     #        OR
-    while not (marker == 'X' and marker == 'O'):
-        marker = input('Player1 choose X or O: ').upper()  
-    #assign player2
+    while not (marker == 'X' or marker == 'O'):
+        marker = input('Player1 choose X or O: ').upper() 
         player1 = marker
     
         if player1 =='X':
-            print('Player2 = O')
             player2 = 'O'
         else:
-            print('Player2 = X')
             player2 = 'X'  
         
     return player1, player2
@@ -1153,7 +1149,7 @@ def display_game ():
     print(game_list[4],'|',game_list[5],'|',game_list[6])
     print('---------')
     print(game_list[1],'|',game_list[2],'|',game_list[3])
-    
+
 def position_choice ():
     
     #import os 
@@ -1212,31 +1208,32 @@ def checkgame ():
     ## DIAGONAL
     diagonal = game_list[7:1:-2], game_list[9:0:-4]
 
-    #LINE CHECKER3
+    x = game_list.count('X')
+    o = game_list.count('O')
+
     if triple_o in line + column + diagonal:
         if triple_o in line:
-            winner = 'O line'
+            winner = 'Player letter O - line'
         if triple_o in column:
-            winner = 'O column'
+            winner = 'Player letter O - column'
         if triple_o in diagonal:
-            winner = 'O diagonal'
+            winner = 'Player letter O - diagonal'
         return True , winner
     
     elif triple_x in line + column + diagonal:
         if triple_x in line:
-            winner = 'X line'
+            winner = 'Plyer letter X - line'
         if triple_x in column:
-            winner = 'X column'
+            winner = 'Plyer letter X - column'
         if triple_x in diagonal:
-            winner = 'X diagonal'
+            winner = 'Plyer letter X - diagonal'
         return True , winner
-
+    elif x == 5 or o == 5:
+            return False, "Game over! It's a tie!"
+    
     else:
         return False
     
-print(checkgame ())
-
-
 def swap():
     player1, player2 = players()
     
@@ -1245,18 +1242,20 @@ def swap():
       
     swap_player = True
     
-    #while swap_player and result == False:
-
+    
     while swap_player and checkgame() == False:
         while p1turn and checkgame () == False:
             playerletter = player1
-            print('\n'*100)
-            print(f'        P1 letter {playerletter}')
+            #print('\n'*100)
+            print(f'    P1 letter {playerletter}')
             
             replacement_choice (playerletter)
             
-            if checkgame() == True:
-                return
+            checker = checkgame()
+            if checker[0] == True:
+            #if checkgame() == True:
+                #print(checker)
+                return checker
             else:
                 p1turn = False
                 p2turn = True
@@ -1264,18 +1263,50 @@ def swap():
         
         while p2turn and checkgame () == False:
             playerletter = player2
-            print('\n'*100)
-            print(f'        P2 letter {playerletter}')
+            #print('\n'*100)
+            print(f'   P2 letter {playerletter}')
 
             replacement_choice (playerletter)
-                       
-            if checkgame() == True:
-                return
+            
+            checker = checkgame()           
+            if checker[0] == True:
+                return checker
             else:
                 p1turn = True
                 p2turn = False
     
-    print (f'Winner! Player letter {checkgame ()[1]}')
+    #print (f'{checkgame ()[1]}')
             
-#swap()
+print(swap())
 
+def gameon_choice ():
+    choice = "Y"
+    result = checkgame()
+    
+    if result == False:
+        while choice.upper() not in ['Y','N']:
+
+            #choice = input("Would you like to keep playing? Y or N: ")
+
+            if choice.upper() not in ['Y','N']:
+                print("Please make sure to choose Y or N: ")
+
+        if choice.upper() == 'Y':
+            return True
+        else:
+            return False
+    else:
+        print('')
+        print(f'Winner - {result[1]}')   
+
+def  gaming ():
+    
+    game_on = True
+        
+    while game_on:
+        
+        swap()
+
+        game_on = gameon_choice()
+        
+gaming ()

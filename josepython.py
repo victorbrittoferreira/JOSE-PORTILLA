@@ -1115,7 +1115,6 @@
 
 ## 65
 
-
 #game_list = ['',1,2,3,4,5,6,7,8,9,10]
 game_list = ['',1,'O','X','X','X','O','O','O','X',10]
 
@@ -1201,7 +1200,7 @@ def checkgame ():
     triple_o, triple_x  = ['O','O','O'],['X','X','X']
     
     ##LINE
-    line = game_list[7:10] , game_list[4:7] ,game_list[1:4]
+    line = game_list[7:10], game_list[4:7], game_list[1:4]
     ## COLUMN
     ## between (()) its transforme into tuple
     column = game_list[7:0:-3], game_list[8:0:-3], game_list[9:0:-3]
@@ -1228,62 +1227,17 @@ def checkgame ():
         if triple_x in diagonal:
             winner = 'Plyer letter X - diagonal'
         return True , winner
-    elif x == 5 or o == 5:
-            return False, "Game over! It's a tie!"
+    elif x > 4 or o > 4:
+        return False, "Game over! It's a tie!"
     
     else:
-        return False
+        return False ,''
     
-def swap():
-    player1, player2 = players()
-    
-    p1turn = True
-    p2turn = False 
-      
-    swap_player = True
-    
-    
-    while swap_player and checkgame() == False:
-        while p1turn and checkgame () == False:
-            playerletter = player1
-            #print('\n'*100)
-            print(f'    P1 letter {playerletter}')
-            
-            replacement_choice (playerletter)
-            
-            checker = checkgame()
-            if checker[0] == True:
-            #if checkgame() == True:
-                #print(checker)
-                return checker
-            else:
-                p1turn = False
-                p2turn = True
-            
-        
-        while p2turn and checkgame () == False:
-            playerletter = player2
-            #print('\n'*100)
-            print(f'   P2 letter {playerletter}')
-
-            replacement_choice (playerletter)
-            
-            checker = checkgame()           
-            if checker[0] == True:
-                return checker
-            else:
-                p1turn = True
-                p2turn = False
-    
-    #print (f'{checkgame ()[1]}')
-            
-print(swap())
-
 def gameon_choice ():
     choice = "Y"
     result = checkgame()
     
-    if result == False:
+    if result == True:
         while choice.upper() not in ['Y','N']:
 
             #choice = input("Would you like to keep playing? Y or N: ")
@@ -1299,14 +1253,64 @@ def gameon_choice ():
         print('')
         print(f'Winner - {result[1]}')   
 
+    
+def swap():
+    player1, player2 = players()
+    
+    p1turn = True
+    p2turn = False 
+      
+    swap_player = True
+    
+    
+    while swap_player and checkgame()[0] == False:
+        while p1turn and checkgame ()[0] == False:
+            playerletter = player1
+            #print('\n'*100)
+            print(f'    P1 letter {playerletter}')
+            replacement_choice (playerletter)
+            
+            checker = checkgame()
+            if checker[0] == True:
+            #if checkgame() == True:
+                #print(checker)
+                return checker
+            else:
+                p1turn = False
+                p2turn = True
+                return checker
+            
+        
+        while p2turn and checkgame ()[0] == False:
+            playerletter = player2
+            #print('\n'*100)
+            print(f'   P2 letter {playerletter}')
+
+            replacement_choice (playerletter)
+            
+            checker = checkgame()           
+            if checker[0] == True:
+                return checker
+            else:
+                p1turn = True
+                p2turn = False
+                return checker
+    return checker
+    
+            
+print(swap())
+
+
+
 def  gaming ():
     
     game_on = True
         
     while game_on:
         
-        swap()
+        result1 = swap()
 
-        game_on = gameon_choice()
+        game_on = gameon_choice(result1)
         
-gaming ()
+#gaming ()
+

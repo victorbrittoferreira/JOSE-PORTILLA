@@ -1314,3 +1314,5 @@ def  gaming ():
         
 #gaming ()
 
+a = s
+
